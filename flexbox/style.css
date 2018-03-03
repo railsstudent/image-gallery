@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 1em;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container > img {
+  width: 33.3%;
+  height: 300px;
+
+  flex: 0 1 auto;
+}
+
+.collage {
+  width: 33.33%;
+  height: 300px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.collage > img {
+  width: 50%;
+  height: 50%;
+  flex: 0 1 auto;
+}
