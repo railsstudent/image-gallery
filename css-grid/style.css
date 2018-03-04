@@ -5,6 +5,9 @@
 :root {
   --image-width: 300px;
   --image-height: 300px;
+  --span-2: auto / span 2;
+  --span-3: auto / span 3;
+  --span-1: auto / span 1;
 }
 
 .container {
@@ -38,28 +41,19 @@
   height: 145px;
 }
 
-.h1 {
-  grid-column: auto / span 1;
+.h1v1 {
+  grid-column: var(--span-1);
+  grid-row: var(--span-1);
 }
 
-.v1 {
-  grid-row: auto / span 1;
+.h2v2 {
+  grid-column: var(--span-2);
+  grid-row: var(--span-2);
 }
 
-.h2 {
-  grid-column: auto / span 2;
-}
-
-.v2 {
-  grid-row: auto / span 2;
-}
-
-.h3 {
-  grid-column: auto / span 3;
-}
-
-.v3 {
-  grid-row: auto / span 3;
+.h3v3  {
+  grid-column: var(--span-3);
+  grid-row: var(--span-3);
 }
 
 @media screen and (max-width: 600px) {
@@ -67,12 +61,8 @@
     --image-width: 250px;
   }
 
-  .h3 {
-    grid-column: auto/ span 2;
-  }
-
-  .v3 {
-    grid-row: auto/ span 2;
+  .h3v3 {
+    --span-3: auto / span 2;
   }
 }
 
@@ -82,11 +72,8 @@
     --image-width: 350px;
   }
 
-  .h3, .h2 {
-    grid-column: auto/ span 1;
-  }
-
-  .v3, .v2 {
-    grid-row: auto/ span 1;
+  .h2v2, .h3v3 {
+    --span-2: auto / span 1;
+    --span-3: auto / span 1;
   }
 }
