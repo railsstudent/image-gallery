@@ -8,7 +8,7 @@
   --span-2: auto / span 2;
   --span-3: auto / span 3;
   --span-1: auto / span 1;
-  --background-color: #000;
+  --background-color: #fff;
 }
 
 .actions-bar {
@@ -42,7 +42,8 @@
 
 .container {
   margin: 0 5px;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10px;
 
   display: grid;
   grid-gap: 10px;
