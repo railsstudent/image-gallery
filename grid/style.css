@@ -10,6 +10,26 @@
   --span-1: auto / span 1;
 }
 
+/* grid fallback begins */
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.h1v1, .h2v2, .h3v3 {
+  flex: 0 0 33.33%;
+}
+
+.collage {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.collage > img {
+  flex: 1 0 25%;
+}
+/* grid fallback ends */
+
 .container {
   margin: 0 5px;
   height: 100vh;
@@ -21,14 +41,16 @@
   grid-auto-rows: var(--image-height);
 }
 
-.container > img {
-  width: 100%;
-  height: 100%;
+.container div.box {
+  display: flex;
+}
+
+.container div.box > img {
+   width: 100%;
 }
 
 .collage {
   width: 100%;
-  height: 100%;
 
   display: grid;
   grid-gap: 10px;
