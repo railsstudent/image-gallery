@@ -1,10 +1,23 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <title>Image Gallery (CSS Grid)</title>
     <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <!-- https://rachelandrew.co.uk/archives/2016/04/12/flexible-sized-grids-with-auto-fill-and-minmax/ -->
+      <div class="actions-bar">
+        <label>Background Color:</label>
+        <select class="color-dropdown">
+          <option value="#fff">White</option>
+          <option value="#f00">Red</option>
+          <option value="#000">Black</option>
+          <option value="goldenrod">Goldenrod</option>
+          <option value="rosybrown">Rosybrown</option>
+          <option value="fuchsia">Fuchsia</option>
+        </select>
+      </div>
       <div class="container">
         <div class="box h1v1">
           <img src="../images/1.jpg" >
@@ -53,4 +66,15 @@
         </div>
       </div>
   </body>
+  <script>
+    function chooseBackground(e) {
+      const newBackgroundColor = e.target.value;
+      const root = document.querySelector(':root');
+      root.style.setProperty('--background-color', newBackgroundColor);
+    }
+
+    const selectDropdown = document.getElementsByClassName('color-dropdown')[0];
+    selectDropdown.addEventListener('change', chooseBackground);
+    
+  </script>
 </html>
