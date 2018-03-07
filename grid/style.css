@@ -91,28 +91,22 @@
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
-  .container {
+  :root {
     --image-width: 200px;
   }
 }
 
 @media screen and (min-width: 401px) and (max-width: 600px) {
-  .container {
+  :root {
     --image-width: 200px;
-  }
-
-  .h3v3 {
     --span-3: auto / span 2;
   }
 }
 
 
 @media screen and (max-width: 400px) {
-  .container {
+  :root {
     --image-width: 350px;
-  }
-
-  .h2v2, .h3v3 {
     --span-2: auto / span 1;
     --span-3: auto / span 1;
   }
