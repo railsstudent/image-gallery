@@ -24,33 +24,14 @@
 .container {
   display: flex;
   flex-flow: row wrap;
+
+  margin: 0 5px;
+  min-height: 100vh;
+  padding: 10px;
 }
 
 .h1v1, .h2v2, .h3v3 {
   flex: 0 0 33.33%;
-}
-
-.collage {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.collage > img {
-  flex: 1 0 25%;
-}
-/* grid fallback ends */
-
-.container {
-  margin: 0 5px;
-  min-height: 100vh;
-  padding: 10px;
-
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(var(--image-width), 1fr));
-  grid-auto-flow: row dense;
-  grid-auto-rows: var(--image-height);
-  background: var(--background-color);
 }
 
 .container div.box {
@@ -62,52 +43,94 @@
 }
 
 .collage {
-  width: 100%;
-
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .collage > img {
   width: 100%;
-  height: 145px;
+  /* height: auto; */
+  flex: 1 0 25%;
 }
 
-.h1v1 {
-  grid-column: var(--span-1);
-  grid-row: var(--span-1);
-}
-
-.h2v2 {
-  grid-column: var(--span-2);
-  grid-row: var(--span-2);
-}
-
-.h3v3  {
-  grid-column: var(--span-3);
-  grid-row: var(--span-3);
-}
-
-@media screen and (min-width: 601px) and (max-width: 800px) {
-  :root {
-    --image-width: 200px;
+@media screen and (max-width: 400px) {
+  /* :root {
+    --image-width: 350px;
+    --span-2: auto / span 1;
+    --span-3: auto / span 1;
+  } */
+  .h1v1, .h2v2, .h3v3 {
+    flex: 0 0 100%;
   }
 }
 
 @media screen and (min-width: 401px) and (max-width: 600px) {
-  :root {
-    --image-width: 200px;
-    --span-3: auto / span 2;
+  .h1v1, .h2v2, .h3v3 {
+    flex: 0 0 100%;
   }
 }
 
+/* grid fallback ends */
 
-@media screen and (max-width: 400px) {
-  :root {
-    --image-width: 350px;
-    --span-2: auto / span 1;
-    --span-3: auto / span 1;
+/* show these CSS if browser supports grid feature */
+@supports (display: grid) {
+  .container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(var(--image-width), 1fr));
+    grid-auto-flow: row dense;
+    grid-auto-rows: var(--image-height);
+    background: var(--background-color);
+  }
+
+  .collage {
+    width: 100%;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .collage > img {
+    width: 100%;
+    height: 145px;
+  }
+
+  .h1v1 {
+    grid-column: var(--span-1);
+    grid-row: var(--span-1);
+  }
+
+  .h2v2 {
+    grid-column: var(--span-2);
+    grid-row: var(--span-2);
+  }
+
+  .h3v3  {
+    grid-column: var(--span-3);
+    grid-row: var(--span-3);
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    :root {
+      --image-width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 600px) {
+    :root {
+      --image-width: 200px;
+      --span-3: auto / span 2;
+    }
+  }
+
+
+  @media screen and (max-width: 400px) {
+    :root {
+      --image-width: 350px;
+      --span-2: auto / span 1;
+      --span-3: auto / span 1;
+    }
   }
 }
