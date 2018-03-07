@@ -49,16 +49,10 @@
 
 .collage > img {
   width: 100%;
-  /* height: auto; */
   flex: 1 0 25%;
 }
 
 @media screen and (max-width: 400px) {
-  /* :root {
-    --image-width: 350px;
-    --span-2: auto / span 1;
-    --span-3: auto / span 1;
-  } */
   .h1v1, .h2v2, .h3v3 {
     flex: 0 0 100%;
   }
