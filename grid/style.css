@@ -48,8 +48,9 @@
 }
 
 .collage > img {
-  width: 100%;
+  /*width: 100%;*/
   flex: 1 0 25%;
+  width: 25%;
 }
 
 @media screen and (max-width: 400px) {
