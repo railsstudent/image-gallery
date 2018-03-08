@@ -57,10 +57,18 @@
   .h1v1, .h2v2, .h3v3 {
     flex: 0 0 100%;
   }
+  
+  .collage > img {
+    flex: 0 0 100%;
+  }
 }
 
 @media screen and (min-width: 401px) and (max-width: 600px) {
   .h1v1, .h2v2, .h3v3 {
+    flex: 0 0 100%;
+  }
+  
+  .collage > img {
     flex: 0 0 100%;
   }
 }
